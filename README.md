@@ -49,6 +49,12 @@ The model uses multi-task learning -- a shared representation learns general lan
 
 ---
 
+## Training Notes
+
+The model was trained for 10 epochs. Quality MAE steadily improved across all 10 epochs (0.75 -> 0.64). Difficulty MAE bottomed out around epoch 5 (0.78) then crept back up slightly. If you're optimizing for both, stopping around epoch 5-6 gives the best balance. The training code is set to 10 epochs so you can watch the full progression.
+
+---
+
 ## Example: LIME Explainability
 
 **Review:** *"Great professor really explains concepts well and makes learning fun"*
@@ -145,7 +151,7 @@ No TensorFlow needed for the demo -- it uses pre-computed LIME explanations.
 
 ## Limitations
 
-- **Overfitting**: The model starts overfitting after about 3 epochs (training loss keeps dropping but validation loss rises). Early stopping or more regularization would help.
+- **Difficulty MAE drift**: Difficulty MAE starts to creep back up after epoch 5, suggesting the model begins overfitting to the training data for that task. Early stopping around epoch 5-6 gives the best balance.
 - **Data scope**: Trained on American University reviews only -- might not generalize to other schools.
 - **No model weights in git**: The model is small enough (~4 MB) to retrain. Run the notebook to train fresh weights.
 - **LIME hack**: The 2D-array trick for regression LIME works but is a workaround.
