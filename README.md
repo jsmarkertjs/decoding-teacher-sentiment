@@ -2,7 +2,7 @@
 
 A multi-task 1D CNN that predicts Quality and Difficulty scores from RateMyProfessors.com reviews, with LIME explainability showing which words drive each prediction.
 
-> Built for DATA-441 (Applied Machine Learning) at American University.
+> Built for DATA-441 (Applied Machine Learning) at American University, Spring 2026.
 
 ---
 
