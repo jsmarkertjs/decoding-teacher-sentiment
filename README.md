@@ -161,7 +161,7 @@ No TensorFlow needed for the demo -- it uses pre-computed LIME explanations.
 
 ## No API Keys Required
 
-The Gemini LLM branch has been removed entirely. No API keys, no rate limits, no external services. Everything runs locally.
+Previously had a second part utilizing a Gemini LLM branch which has been removed entirely. No API keys, no rate limits, no external services. Everything runs locally.
 
 ---
 
