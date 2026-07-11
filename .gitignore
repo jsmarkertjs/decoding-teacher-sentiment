@@ -41,3 +41,7 @@ data/*.csv
 # Environment variables
 .env
 *.env.local
+
+# Claude Code config (keep local, not on GitHub)
+.claude/
+CLAUDE.md
