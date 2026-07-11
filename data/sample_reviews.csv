@@ -1,0 +1,88 @@
+professor_id,professor_name,course,review_text,grade,difficulty,quality,would_take_again,tags,date
+1001,John Smith,CSC-101,Great professor really explains concepts well and makes learning fun,A,2,5,Yes,"Gives good feedback, Inspirational, Caring",2023-11-15
+1001,John Smith,CSC-101,Tough class but learned a lot. He expects you to work hard,B+,4,4,Yes,"Tough grader, Lots of homework",2023-10-20
+1001,John Smith,CSC-201,Way too hard didnt understand anything. Would not recommend,B-,5,2,No,"Tough grader, Get ready to read",2023-09-05
+1002,Sarah Johnson,ENG-101,Amazing teacher very passionate about literature,A,1,5,Yes,"Inspirational, Caring, Amazing lectures",2023-12-01
+1002,Sarah Johnson,ENG-201,She makes every class engaging and the readings are well chosen,A-,2,5,Yes,"Gives good feedback, Inspirational",2023-11-10
+1002,Sarah Johnson,ENG-101,Decent class but she talks too much about her personal life,B+,2,3,Yes,"Caring",2023-10-15
+1003,Robert Chen,MATH-201,Best math professor I have ever had explains everything clearly,A,3,5,Yes,"Amazing lectures, Clear grading criteria, Caring",2023-12-05
+1003,Robert Chen,MATH-201,Very hard exams even if you understand the material,B,4,3,No,"Tough grader, Get ready to read",2023-11-20
+1003,Robert Chen,MATH-301,The proofs are brutal and he moves too fast through material,C+,5,2,No,"Tough grader, Lots of homework",2023-10-25
+1004,Emily Davis,HIST-101,She really cares about her students and makes history come alive,A,1,5,Yes,"Caring, Inspirational, Gives good feedback",2023-11-28
+1004,Emily Davis,HIST-201,Great discussions but the essays are graded very harshly,B,3,4,Yes,"Tough grader, Gives good feedback",2023-10-30
+1005,Michael Brown,PHYS-201,Hard class but fair. The labs are interesting and well organized,B+,3,4,Yes,"Clear grading criteria, Lots of homework",2023-12-10
+1005,Michael Brown,PHYS-201,Physics is hard enough but his teaching makes it harder,C,5,2,No,"Tough grader, Get ready to read",2023-11-15
+1005,Michael Brown,PHYS-101,Explains concepts well and offers extra help during office hours,A-,2,4,Yes,"Caring, Gives good feedback",2023-10-20
+1006,Jessica Wilson,PSY-101,Such an engaging professor the lectures fly by,A,1,5,Yes,"Amazing lectures, Inspirational, Caring",2023-12-15
+1006,Jessica Wilson,PSY-201,She knows her stuff but expects a lot from students,B+,3,4,Yes,"Gives good feedback, Lots of reading",2023-11-05
+1006,Jessica Wilson,PSY-301,Interesting material but the research papers are overwhelming,B,4,3,Yes,"Tough grader, Lots of homework",2023-10-10
+1007,David Martinez,CHEM-101,Great lab demonstrations that really help understand chemistry,A,2,5,Yes,"Amazing lectures, Clear grading criteria",2023-11-25
+1007,David Martinez,CHEM-201,The workload is heavy but you will understand chemistry deeply if you put in the work,B,4,4,Yes,"Lots of homework, Tough grader",2023-10-28
+1008,Laura Thompson,SOC-101,Easy class if you do the readings. Not very challenging,C+,1,3,Yes,"Clear grading criteria",2023-12-08
+1008,Laura Thompson,SOC-201,She grades fairly but the content can be dry sometimes,B,2,3,Yes,"Gives good feedback",2023-11-18
+1009,James Anderson,ART-101,Very creative class that pushes you to think differently about art,A-,1,5,Yes,"Inspirational, Caring, Gives good feedback",2023-12-12
+1009,James Anderson,ART-201,He lets you express yourself freely and the critiques are always constructive,A,2,5,Yes,"Gives good feedback, Inspirational",2023-11-08
+1010,Amanda Taylor,BIO-101,She is so knowledgeable and makes biology accessible to everyone,A,2,5,Yes,"Amazing lectures, Caring, Inspirational",2023-11-30
+1010,Amanda Taylor,BIO-201,The labs are time consuming but the lectures are excellent,B+,3,4,Yes,"Lots of homework, Clear grading criteria",2023-10-22
+1010,Amanda Taylor,BIO-301,Very difficult course. Would not recommend unless you love biology,C+,5,2,No,"Tough grader, Get ready to read",2023-09-28
+1011,Christopher Lee,PHIL-101,Deep philosophical discussions that really make you think. He facilitates well,A-,2,5,Yes,"Amazing lectures, Inspirational",2023-12-05
+1011,Christopher Lee,PHIL-201,The readings are extremely dense and he expects you to understand everything,B,3,3,No,"Lots of reading, Tough grader",2023-11-01
+1012,Rachel Green,BUS-101,Great introduction to business concepts with real world examples,A,1,5,Yes,"Inspirational, Amazing lectures",2023-12-18
+1012,Rachel Green,BUS-201,The group projects are annoying but the content itself is useful,B+,2,4,Yes,"Clear grading criteria, Gives good feedback",2023-11-22
+1013,Thomas White,ECON-101,He makes economics fun and easy to understand. Great for non majors,A,1,5,Yes,"Amazing lectures, Inspirational, Caring",2023-11-15
+1013,Thomas White,ECON-201,Gets really theoretical in the second half but explains it well enough to follow,B+,3,4,Yes,"Clear grading criteria",2023-10-20
+1014,Megan Black,POL-101,Very politically biased lectures. Hard to take seriously when only one viewpoint is presented,C,2,2,No,"Tough grader",2023-12-02
+1014,Megan Black,POL-201,The debates are well organized and she ensures all sides are heard,B,3,4,Yes,"Gives good feedback, Clear grading criteria",2023-11-10
+1015,Kevin Gray,SPAN-101,Great language professor very patient and uses immersive techniques effectively,A,2,5,Yes,"Caring, Amazing lectures",2023-12-10
+1015,Kevin Gray,SPAN-201,The pace picks up significantly in the second semester but you learn a lot,B+,3,4,Yes,"Lots of homework, Gives good feedback",2023-11-05
+1016,Lisa Brown,COM-101,Excellent public speaking class. She creates a safe environment to practice,A,1,5,Yes,"Inspirational, Caring, Gives good feedback",2023-12-15
+1016,Lisa Brown,COM-201,The presentations are nerve wracking but she prepares you well,B+,2,4,Yes,"Gives good feedback, Clear grading criteria",2023-11-20
+1017,Daniel Kim,CS-201,This class is incredibly difficult but I learned more than any other course,B-,4,4,Yes,"Tough grader, Lots of homework",2023-12-08
+1017,Daniel Kim,CS-101,Great intro to programming. His examples really click with students,A-,2,5,Yes,"Amazing lectures, Clear grading criteria",2023-11-12
+1017,Daniel Kim,CS-301,The projects take forever but you come out a much better programmer,B,4,4,Yes,"Lots of homework, Tough grader, Gives good feedback",2023-10-15
+1018,Natalie Adams,ENG-201,She really knows how to teach writing. My essays improved dramatically,A,2,5,Yes,"Gives good feedback, Inspirational, Caring",2023-12-12
+1018,Natalie Adams,ENG-101,Many writing exercises but they actually help improve your skills,B+,1,4,Yes,"Gives good feedback",2023-11-25
+1019,Steven Clark,MUS-101,Fantastic musician and teacher. The class is fun and educational,A,1,5,Yes,"Inspirational, Amazing lectures, Caring",2023-12-20
+1019,Steven Clark,MUS-201,He expects serious practice time but you become a much better musician,B+,3,4,Yes,"Tough grader, Gives good feedback",2023-11-15
+1020,Rebecca Hall,GEO-101,Interesting class with good field trips. She explains geography concepts well,A-,1,4,Yes,"Amazing lectures, Caring",2023-12-05
+1020,Rebecca Hall,GEO-201,The research papers are time consuming but the topics are fascinating,B,3,3,Yes,"Lots of homework",2023-10-28
+1021,Mark Wright,PSY-201,Great professor who uses real case studies to illustrate psychological concepts,A,2,5,Yes,"Amazing lectures, Inspirational",2023-11-30
+1021,Mark Wright,PSY-101,The class is easy if you pay attention but the exams are tricky,B+,2,3,Yes,"Clear grading criteria",2023-10-25
+1022,Helen Carter,POS-101,Very passionate about political science and it shows in her lectures,A-,1,5,Yes,"Inspirational, Caring, Amazing lectures",2023-12-14
+1022,Helen Carter,POS-201,The simulations are engaging and help understand real political processes,A,2,5,Yes,"Amazing lectures, Gives good feedback",2023-11-18
+1023,Edward Murphy,ENV-101,Great class for understanding environmental issues. The projects are meaningful,A,2,5,Yes,"Inspirational, Caring, Gives good feedback",2023-12-10
+1023,Edward Murphy,ENV-201,Gets into policy details which can be dry but the science parts are engaging,B+,3,3,Yes,"Clear grading criteria",2023-11-08
+1024,Sophia Reed,SOC-301,The sociological theory readings are heavy but she helps break them down in class,B,4,4,Yes,"Amazing lectures, Lots of reading",2023-12-02
+1024,Sophia Reed,SOC-101,Interesting introduction to sociology with lots of relevant examples,A-,1,5,Yes,"Inspirational, Caring",2023-10-30
+1025,Andrew Foster,STA-201,Statistics is hard but he makes the formulas make sense with practical examples,B+,3,4,Yes,"Clear grading criteria, Gives good feedback",2023-11-28
+1025,Andrew Foster,STA-101,Very clear explanations of statistical concepts. Would recommend to anyone struggling with math,A-,2,5,Yes,"Amazing lectures, Caring",2023-10-20
+1026,Olivia Ross,BIO-201,The dissection labs are well organized and she walks you through everything,A,3,5,Yes,"Clear grading criteria, Gives good feedback, Caring",2023-12-15
+1026,Olivia Ross,BIO-101,Her enthusiasm for biology is contagious. Makes you want to learn more,A,1,5,Yes,"Inspirational, Amazing lectures",2023-11-10
+1027,Richard Turner,HIS-201,Really interesting take on American history. He focuses on stories not just dates,A-,2,5,Yes,"Amazing lectures, Inspirational",2023-12-08
+1027,Richard Turner,HIS-101,The exams require too much memorization of specific dates and names,B,3,3,No,"Lots of homework",2023-10-25
+1028,Patricia Morgan,PHY-101,The concepts are hard but she explains them in a way anyone can understand,B+,3,4,Yes,"Amazing lectures, Caring",2023-11-22
+1028,Patricia Morgan,PHY-201,Way too much math for an introductory course. She tries to help but it is overwhelming,C+,5,2,No,"Tough grader, Get ready to read",2023-10-18
+1029,George Bennett,CHEM-201,The organic chemistry is brutal but his study guides are incredibly helpful,B,4,4,Yes,"Gives good feedback, Lots of homework",2023-12-05
+1029,George Bennett,CHEM-101,Makes chemistry fun with cool demonstrations and real world applications,A,2,5,Yes,"Amazing lectures, Inspirational",2023-11-01
+1030,Victoria Shaw,ART-301,She pushes you to find your artistic voice. The critiques are tough but fair,B+,3,4,Yes,"Gives good feedback, Tough grader",2023-12-12
+1030,Victoria Shaw,ART-101,Great foundation class for understanding art principles and techniques,A-,1,5,Yes,"Inspirational, Caring",2023-11-15
+1031,Peter Collins,BUS-301,The case studies are very relevant to current business challenges,A,3,5,Yes,"Amazing lectures, Gives good feedback",2023-12-18
+1031,Peter Collins,BUS-201,He expects professional level work but prepares you well for real business,B+,3,4,Yes,"Tough grader, Clear grading criteria",2023-11-08
+1032,Diana Price,PSY-401,Advanced topics are well covered. She is an expert in cognitive psychology,A,3,5,Yes,"Amazing lectures, Inspirational, Gives good feedback",2023-12-10
+1032,Diana Price,PSY-201,The experiments we designed ourselves were the best part of the class,A-,2,5,Yes,"Inspirational, Clear grading criteria",2023-11-02
+1033,Ronald Fisher,PHL-201,Logic and reasoning are broken down so clearly. Every student should take this class,A,2,5,Yes,"Amazing lectures, Clear grading criteria",2023-12-15
+1033,Ronald Fisher,PHL-101,The material is abstract but his examples make it concrete,A-,1,4,Yes,"Gives good feedback",2023-11-10
+1034,Angela Scott,FRE-101,Excellent language teacher. The immersion approach really works,A,2,5,Yes,"Inspirational, Amazing lectures, Caring",2023-12-10
+1034,Angela Scott,FRE-201,She expects you to speak French in class from day two which is intimidating but effective,B+,3,4,Yes,"Gives good feedback, Tough grader",2023-11-05
+1035,Justin Hayes,ECO-201,Really clear explanations of supply and demand. The graphs actually make sense,A-,2,5,Yes,"Amazing lectures, Clear grading criteria",2023-12-08
+1035,Justin Hayes,ECO-101,Good introduction to economics but the problem sets are tedious,B+,2,3,Yes,"Lots of homework",2023-10-28
+1036,Carolyn James,SOC-201,The community research project was eye opening and well guided,A,3,5,Yes,"Inspirational, Gives good feedback, Caring",2023-12-12
+1036,Carolyn James,SOC-101,Her lectures are engaging and she brings in great guest speakers,A-,1,5,Yes,"Amazing lectures, Inspirational",2023-11-15
+1037,Brian Knight,CSC-301,The algorithms are challenging but he provides excellent resources and practice problems,B+,4,4,Yes,"Clear grading criteria, Gives good feedback",2023-12-05
+1037,Brian Knight,CSC-201,He truly cares about whether students understand the material,A,2,5,Yes,"Caring, Amazing lectures",2023-10-30
+1038,Michelle Grant,ENG-301,Advanced literary theory made accessible. She is brilliant,A,3,5,Yes,"Inspirational, Amazing lectures, Gives good feedback",2023-12-15
+1038,Michelle Grant,ENG-201,The essay prompts are thought provoking and she gives detailed feedback,A-,2,4,Yes,"Gives good feedback, Inspirational",2023-11-10
+1039,Lawrence Cook,POL-301,The foreign policy simulations are the highlight of the course,A,3,5,Yes,"Amazing lectures, Inspirational",2023-12-10
+1039,Lawrence Cook,POL-201,He has extensive experience in diplomacy which enriches the lectures,B+,2,4,Yes,"Amazing lectures, Clear grading criteria",2023-11-02
+1040,Brenda Miller,BIO-301,The genetics module is fascinating and she explains complex mechanisms clearly,A,3,5,Yes,"Amazing lectures, Gives good feedback, Caring",2023-12-18
+1040,Brenda Miller,BIO-201,Molecular biology is difficult but her study guides make it manageable,B+,4,4,Yes,"Gives good feedback, Lots of homework",2023-11-20

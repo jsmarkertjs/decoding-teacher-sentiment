@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Decoding Teacher Sentiment -- DATA-441 Final Project</title>
+    <style>
+        :root {
+            --bg: #fafafa;
+            --surface: #ffffff;
+            --text: #1a1a2e;
+            --text-secondary: #555;
+            --accent: #3b4a6b;
+            --accent-light: #5a7a9a;
+            --green: #2e7d32;
+            --red: #c62828;
+            --border: #e0e0e0;
+            --radius: 8px;
+        }
+        @media (prefers-color-scheme: dark) {
+            :root {
+                --bg: #0d1117;
+                --surface: #161b22;
+                --text: #e6edf3;
+                --text-secondary: #8b949e;
+                --accent: #58a6ff;
+                --accent-light: #79c0ff;
+                --green: #3fb950;
+                --red: #f85149;
+                --border: #30363d;
+            }
+        }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, sans-serif;
+            background: var(--bg);
+            color: var(--text);
+            line-height: 1.6;
+            padding: 2rem 1rem;
+        }
+        .container { max-width: 900px; margin: 0 auto; }
+
+        header { text-align: center; margin-bottom: 3rem; }
+        header h1 { font-size: 2.2rem; font-weight: 700; margin-bottom: 0.5rem; }
+        header p { color: var(--text-secondary); font-size: 1.1rem; max-width: 600px; margin: 0 auto; }
+        header .badge { display: inline-block; margin: 1rem 0.25rem 0; padding: 0.3rem 0.8rem; border-radius: 20px; font-size: 0.85rem; background: var(--surface); border: 1px solid var(--border); }
+
+        section { margin-bottom: 2.5rem; }
+        h2 { font-size: 1.5rem; font-weight: 600; margin-bottom: 1rem; padding-bottom: 0.3rem; border-bottom: 2px solid var(--accent); display: inline-block; }
+        h3 { font-size: 1.15rem; font-weight: 600; margin: 1.5rem 0 0.5rem; }
+
+        .card { background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius); padding: 1.5rem; margin-bottom: 1.5rem; }
+        .card h3 { margin-top: 0; }
+
+        .metrics { display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 1rem; margin: 1.5rem 0; }
+        .metric { text-align: center; padding: 1.2rem; background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius); }
+        .metric .value { font-size: 2rem; font-weight: 700; color: var(--accent); }
+        .metric .label { font-size: 0.9rem; color: var(--text-secondary); margin-top: 0.2rem; }
+
+        .arch { display: flex; flex-direction: column; align-items: center; gap: 0.5rem; padding: 1.5rem 0; font-family: 'SF Mono', 'Fira Code', monospace; font-size: 0.9rem; }
+        .arch-box { padding: 0.6rem 1.2rem; border: 1px solid var(--border); border-radius: var(--radius); background: var(--surface); text-align: center; }
+        .arch-arrow { color: var(--text-secondary); font-size: 1.2rem; }
+        .arch-split { display: flex; gap: 1rem; }
+        .arch-split .arch-box { flex: 1; }
+
+        .word-bar { display: flex; align-items: center; gap: 0.5rem; margin: 0.3rem 0; }
+        .word-bar .word { width: 90px; text-align: right; font-size: 0.9rem; font-weight: 500; }
+        .word-bar .bar-wrap { flex: 1; max-width: 250px; }
+        .word-bar .bar { height: 22px; border-radius: 4px; display: flex; align-items: center; padding-left: 6px; color: #fff; font-size: 0.75rem; font-weight: 600; min-width: 20px; }
+        .word-bar .weight { width: 50px; font-size: 0.8rem; color: var(--text-secondary); }
+
+        code { background: var(--surface); padding: 0.15rem 0.4rem; border-radius: 4px; font-size: 0.85em; border: 1px solid var(--border); }
+        pre { background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius); padding: 1rem; overflow-x: auto; font-size: 0.85rem; margin: 0.5rem 0; }
+
+        .btn { display: inline-block; padding: 0.7rem 1.5rem; border-radius: var(--radius); text-decoration: none; font-weight: 600; margin: 0.25rem; transition: opacity 0.2s; }
+        .btn:hover { opacity: 0.85; }
+        .btn-primary { background: var(--accent); color: #fff; }
+        .btn-secondary { background: var(--surface); color: var(--text); border: 1px solid var(--border); }
+
+        footer { text-align: center; color: var(--text-secondary); font-size: 0.85rem; margin-top: 3rem; padding-top: 1.5rem; border-top: 1px solid var(--border); }
+        footer a { color: var(--accent); }
+
+        @media (max-width: 600px) {
+            header h1 { font-size: 1.6rem; }
+            .metrics { grid-template-columns: 1fr 1fr; }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+
+        <!-- Header -->
+        <header>
+            <h1>Decoding Teacher Sentiment</h1>
+            <p>A multi-task CNN that predicts Quality and Difficulty from RateMyProfessor reviews, with LIME word-level explanations.</p>
+            <div>
+                <span class="badge">DATA-441 Final Project</span>
+                <span class="badge">American University</span>
+                <span class="badge">1D CNN + LIME</span>
+            </div>
+            <div style="margin-top: 1.5rem;">
+                <a href="https://github.com/jsmarkertjs/decoding-teacher-sentiment" class="btn btn-primary">View on GitHub</a>
+                <a href="https://huggingface.co/spaces" class="btn btn-secondary">Live Demo</a>
+                <a href="presentations/Decoding_Teacher_Sentiment.pdf" class="btn btn-secondary">Presentation Slides</a>
+            </div>
+        </header>
+
+        <!-- Overview -->
+        <section>
+            <h2>Overview</h2>
+            <div class="card">
+                <p>RateMyProfessors scores are vague averages. A 3.5 overall rating could mean an easy grader or a great teacher -- you can't tell from the number alone.</p>
+                <p>This project builds a multi-task 1D CNN that separates those two factors, predicting both Quality and Difficulty scores from the same review text, then uses LIME to show which words drove each prediction.</p>
+            </div>
+        </section>
+
+        <!-- Results -->
+        <section>
+            <h2>Results</h2>
+            <div class="metrics">
+                <div class="metric">
+                    <div class="value">0.54</div>
+                    <div class="label">Quality MAE (best epoch)</div>
+                </div>
+                <div class="metric">
+                    <div class="value">0.42</div>
+                    <div class="label">Difficulty MAE (best epoch)</div>
+                </div>
+                <div class="metric">
+                    <div class="value">1.08M</div>
+                    <div class="label">Total Parameters</div>
+                </div>
+                <div class="metric">
+                    <div class="value">27,874</div>
+                    <div class="label">Training Samples</div>
+                </div>
+            </div>
+            <div class="card">
+                <p><strong>Training curves:</strong> The model converges quickly -- validation loss bottoms out around epoch 3-4. After that, training loss keeps dropping but validation loss rises (overfitting). Early stopping would improve generalization.</p>
+                <table style="width:100%; border-collapse: collapse; margin-top: 1rem;">
+                    <thead>
+                        <tr style="border-bottom: 1px solid var(--border);">
+                            <th style="text-align:left; padding:0.5rem 0;">Epoch</th>
+                            <th style="text-align:right; padding:0.5rem 0;">Quality MAE (val)</th>
+                            <th style="text-align:right; padding:0.5rem 0;">Difficulty MAE (val)</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr><td style="padding:0.3rem 0;">1</td><td style="text-align:right;">0.75</td><td style="text-align:right;">0.83</td></tr>
+                        <tr><td style="padding:0.3rem 0;">3</td><td style="text-align:right;">0.67</td><td style="text-align:right;">0.78</td></tr>
+                        <tr><td style="padding:0.3rem 0; font-weight:600;">5</td><td style="text-align:right; font-weight:600;">0.65</td><td style="text-align:right; font-weight:600;">0.77</td></tr>
+                        <tr><td style="padding:0.3rem 0;">10</td><td style="text-align:right;">0.64</td><td style="text-align:right;">0.81</td></tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
+
+        <!-- Architecture -->
+        <section>
+            <h2>Architecture</h2>
+            <div class="card">
+                <div class="arch">
+                    <div class="arch-box">Input (150 tokens)</div>
+                    <div class="arch-arrow">|</div>
+                    <div class="arch-box">Embedding (10,000 to 100d)</div>
+                    <div class="arch-arrow">|</div>
+                    <div class="arch-box">Conv1D (128 filters, k=5, ReLU)</div>
+                    <div class="arch-arrow">|</div>
+                    <div class="arch-box">GlobalMaxPooling1D</div>
+                    <div class="arch-arrow">|</div>
+                    <div class="arch-box">Dropout (0.5)</div>
+                    <div class="arch-arrow">|</div>
+                    <div class="arch-split">
+                        <div class="arch-box">Dense(64) to Dense(1)<br><small>Quality Score</small></div>
+                        <div class="arch-box">Dense(64) to Dense(1)<br><small>Difficulty Score</small></div>
+                    </div>
+                </div>
+                <p style="margin-top: 1rem; font-size: 0.9rem; color: var(--text-secondary);">
+                    Shared convolutional layers learn general sentiment patterns; two task-specific heads specialize for Quality vs. Difficulty.
+                </p>
+            </div>
+        </section>
+
+        <!-- LIME Example -->
+        <section>
+            <h2>LIME Explainability</h2>
+            <div class="card">
+                <p><strong>Review:</strong> <em>"Great professor really explains concepts well and makes learning fun"</em></p>
+
+                <h3 style="margin-top: 1rem;">Quality Explanation</h3>
+                <div>
+                    <div class="word-bar"><span class="word">great</span><div class="bar-wrap"><div class="bar" style="width:100%; background:var(--green);">+0.32</div></div><span class="weight">+0.32</span></div>
+                    <div class="word-bar"><span class="word">explains</span><div class="bar-wrap"><div class="bar" style="width:88%; background:var(--green);">+0.28</div></div><span class="weight">+0.28</span></div>
+                    <div class="word-bar"><span class="word">fun</span><div class="bar-wrap"><div class="bar" style="width:66%; background:var(--green);">+0.21</div></div><span class="weight">+0.21</span></div>
+                    <div class="word-bar"><span class="word">well</span><div class="bar-wrap"><div class="bar" style="width:47%; background:var(--green);">+0.15</div></div><span class="weight">+0.15</span></div>
+                    <div class="word-bar"><span class="word">professor</span><div class="bar-wrap"><div class="bar" style="width:25%; background:var(--green);">+0.08</div></div><span class="weight">+0.08</span></div>
+                </div>
+
+                <h3 style="margin-top: 1.5rem;">Difficulty Explanation</h3>
+                <div>
+                    <div class="word-bar"><span class="word">explains</span><div class="bar-wrap"><div class="bar" style="width:100%; background:var(--green);">-0.25</div></div><span class="weight">-0.25</span></div>
+                    <div class="word-bar"><span class="word">great</span><div class="bar-wrap"><div class="bar" style="width:72%; background:var(--green);">-0.18</div></div><span class="weight">-0.18</span></div>
+                    <div class="word-bar"><span class="word">fun</span><div class="bar-wrap"><div class="bar" style="width:48%; background:var(--green);">-0.12</div></div><span class="weight">-0.12</span></div>
+                    <div class="word-bar"><span class="word">learning</span><div class="bar-wrap"><div class="bar" style="width:40%; background:var(--green);">-0.10</div></div><span class="weight">-0.10</span></div>
+                </div>
+                <p style="margin-top: 1rem; font-size: 0.9rem; color: var(--text-secondary);">
+                    Positive words like <em>great</em> and <em>explains</em> boost quality while lowering difficulty -- the model learns that well-explained material feels easier.
+                </p>
+            </div>
+
+            <div class="card">
+                <h3>Counterexample -- Negative Review</h3>
+                <p><strong>Review:</strong> <em>"Way too hard didn't understand anything. Would not recommend"</em></p>
+                <div>
+                    <div class="word-bar"><span class="word">hard</span><div class="bar-wrap"><div class="bar" style="width:100%; background:var(--red);">-0.28</div></div><span class="weight">-0.28</span></div>
+                    <div class="word-bar"><span class="word">didn't</span><div class="bar-wrap"><div class="bar" style="width:79%; background:var(--red);">-0.22</div></div><span class="weight">-0.22</span></div>
+                    <div class="word-bar"><span class="word">understand</span><div class="bar-wrap"><div class="bar" style="width:54%; background:var(--red);">-0.15</div></div><span class="weight">-0.15</span></div>
+                </div>
+                <p style="margin-top: 0.5rem; font-size: 0.9rem; color: var(--text-secondary);">
+                    All negative words push quality down -- and <em>hard</em> pushes difficulty up by +0.30.
+                </p>
+            </div>
+        </section>
+
+        <!-- How to Run -->
+        <section>
+            <h2>Run It Yourself</h2>
+            <div class="card">
+                <h3>1. Notebook (full reproduction)</h3>
+                <pre>pip install -r requirements.txt
+jupyter notebook notebooks/project_final.ipynb</pre>
+                <p>Scrape data, train the model, see LIME explanations. No API keys needed.</p>
+            </div>
+            <div class="card">
+                <h3>2. Streamlit Demo (quick preview)</h3>
+                <pre>cd demo
+pip install -r requirements.txt
+streamlit run app.py</pre>
+                <p>Browse pre-computed LIME explanations for 10+ reviews without installing TensorFlow.</p>
+            </div>
+            <div class="card">
+                <h3>3. Modular Python</h3>
+                <pre>from src.preprocessing import clean_for_nn, prepare_data
+from src.model import build_model
+from src.lime_explainer import explain_difficulty, explain_quality</pre>
+                <p>Import individual components into your own scripts.</p>
+            </div>
+        </section>
+
+        <!-- Limitations -->
+        <section>
+            <h2>Limitations</h2>
+            <div class="card">
+                <ul>
+                    <li><strong>Overfitting:</strong> The model overfits after about 3 epochs. The final weights at epoch 10 trade generalization for training accuracy.</li>
+                    <li><strong>Data scope:</strong> Trained on American University reviews only -- may not generalize to other institutions.</li>
+                    <li><strong>No model weights:</strong> The model is about 4 MB. Run the notebook to train fresh weights from your data.</li>
+                    <li><strong>LIME regression hack:</strong> The 2D-array trick is a workaround, not a proper solution. SHAP or a native regression explainer would be cleaner.</li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- Footer -->
+        <footer>
+            <p>
+                Built by <strong>Jack Markert</strong> for DATA-441 (Applied Machine Learning) at American University.
+                <br>
+                <a href="https://github.com/jsmarkertjs/decoding-teacher-sentiment">GitHub</a> -
+                <a href="https://arxiv.org/abs/1602.04938">LIME Paper</a> -
+                <a href="https://www.ratemyprofessors.com">RateMyProfessors.com</a>
+            </p>
+        </footer>
+
+    </div>
+</body>
+</html>

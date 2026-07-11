@@ -1,0 +1,200 @@
+[
+  {
+    "review": "Great professor really explains concepts well and makes learning fun",
+    "actual_quality": 5,
+    "actual_difficulty": 2,
+    "predicted_quality": 4.52,
+    "predicted_difficulty": 2.31,
+    "lime_quality": [
+      ["great", 0.32],
+      ["explains", 0.28],
+      ["fun", 0.21],
+      ["well", 0.15],
+      ["professor", 0.08],
+      ["learning", 0.06]
+    ],
+    "lime_difficulty": [
+      ["explains", -0.25],
+      ["great", -0.18],
+      ["fun", -0.12],
+      ["learning", -0.10],
+      ["well", -0.08],
+      ["professor", -0.04]
+    ]
+  },
+  {
+    "review": "Way too hard didnt understand anything. Would not recommend",
+    "actual_quality": 2,
+    "actual_difficulty": 5,
+    "predicted_quality": 2.75,
+    "predicted_difficulty": 4.18,
+    "lime_quality": [
+      ["hard", -0.28],
+      ["didnt", -0.22],
+      ["understand", -0.15],
+      ["anything", -0.10],
+      ["recommend", -0.08],
+      ["way", -0.05]
+    ],
+    "lime_difficulty": [
+      ["hard", 0.30],
+      ["didnt", 0.18],
+      ["anything", 0.12],
+      ["understand", 0.10],
+      ["recommend", 0.05],
+      ["way", 0.03]
+    ]
+  },
+  {
+    "review": "Amazing teacher very passionate about literature",
+    "actual_quality": 5,
+    "actual_difficulty": 1,
+    "predicted_quality": 4.85,
+    "predicted_difficulty": 1.42,
+    "lime_quality": [
+      ["amazing", 0.35],
+      ["passionate", 0.30],
+      ["teacher", 0.22],
+      ["literature", 0.10]
+    ],
+    "lime_difficulty": [
+      ["passionate", -0.20],
+      ["amazing", -0.18],
+      ["teacher", -0.15],
+      ["literature", -0.05]
+    ]
+  },
+  {
+    "review": "The lectures are engaging and she brings in great guest speakers",
+    "actual_quality": 5,
+    "actual_difficulty": 1,
+    "predicted_quality": 4.35,
+    "predicted_difficulty": 2.05,
+    "lime_quality": [
+      ["engaging", 0.28],
+      ["great", 0.22],
+      ["speakers", 0.18],
+      ["lectures", 0.12]
+    ],
+    "lime_difficulty": [
+      ["engaging", -0.15],
+      ["lectures", -0.10],
+      ["great", -0.08],
+      ["speakers", -0.05]
+    ]
+  },
+  {
+    "review": "The exams require too much memorization of specific dates and names",
+    "actual_quality": 3,
+    "actual_difficulty": 3,
+    "predicted_quality": 2.92,
+    "predicted_difficulty": 3.45,
+    "lime_quality": [
+      ["exams", -0.20],
+      ["memorization", -0.18],
+      ["too", -0.12],
+      ["specific", -0.05]
+    ],
+    "lime_difficulty": [
+      ["memorization", 0.22],
+      ["exams", 0.18],
+      ["too", 0.10],
+      ["specific", 0.06]
+    ]
+  },
+  {
+    "review": "He truly cares about whether students understand the material",
+    "actual_quality": 5,
+    "actual_difficulty": 2,
+    "predicted_quality": 4.12,
+    "predicted_difficulty": 2.15,
+    "lime_quality": [
+      ["cares", 0.32],
+      ["understand", 0.25],
+      ["truly", 0.18],
+      ["material", 0.08]
+    ],
+    "lime_difficulty": [
+      ["cares", -0.22],
+      ["understand", -0.18],
+      ["truly", -0.10],
+      ["material", -0.05]
+    ]
+  },
+  {
+    "review": "Very politically biased lectures. Hard to take seriously",
+    "actual_quality": 2,
+    "actual_difficulty": 2,
+    "predicted_quality": 2.18,
+    "predicted_difficulty": 3.50,
+    "lime_quality": [
+      ["biased", -0.30],
+      ["hard", -0.22],
+      ["seriously", -0.18],
+      ["lectures", -0.08]
+    ],
+    "lime_difficulty": [
+      ["hard", 0.25],
+      ["biased", 0.20],
+      ["seriously", 0.15],
+      ["lectures", 0.05]
+    ]
+  },
+  {
+    "review": "Hard class but fair. The labs are interesting and well organized",
+    "actual_quality": 4,
+    "actual_difficulty": 3,
+    "predicted_quality": 3.85,
+    "predicted_difficulty": 3.12,
+    "lime_quality": [
+      ["interesting", 0.20],
+      ["fair", 0.18],
+      ["well", 0.12],
+      ["organized", 0.10]
+    ],
+    "lime_difficulty": [
+      ["hard", 0.18],
+      ["class", 0.10],
+      ["interesting", -0.08],
+      ["fair", -0.06]
+    ]
+  },
+  {
+    "review": "Physics is hard enough but his teaching makes it harder",
+    "actual_quality": 2,
+    "actual_difficulty": 5,
+    "predicted_quality": 2.05,
+    "predicted_difficulty": 4.55,
+    "lime_quality": [
+      ["hard", -0.25],
+      ["harder", -0.22],
+      ["teaching", -0.15],
+      ["enough", -0.08]
+    ],
+    "lime_difficulty": [
+      ["harder", 0.28],
+      ["hard", 0.20],
+      ["teaching", 0.12],
+      ["enough", 0.06]
+    ]
+  },
+  {
+    "review": "She makes every class engaging and the readings are well chosen",
+    "actual_quality": 5,
+    "actual_difficulty": 2,
+    "predicted_quality": 4.45,
+    "predicted_difficulty": 2.10,
+    "lime_quality": [
+      ["engaging", 0.30],
+      ["well", 0.20],
+      ["class", 0.15],
+      ["chosen", 0.10]
+    ],
+    "lime_difficulty": [
+      ["engaging", -0.20],
+      ["class", -0.10],
+      ["well", -0.08],
+      ["chosen", -0.04]
+    ]
+  }
+]
